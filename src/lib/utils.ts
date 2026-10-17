@@ -15,18 +15,12 @@ export function extractPUIDsFromResponse(res: string): string[] {
 
 export function PUIDToIdx(PUID: string): number {
 	const regexp = /\d+/g;
-	const arr = [...PUID.match(regexp)];
-
-	if (arr.length === 0) {
+	const match = PUID.match(regexp);
+	if (!match || match.length === 0) {
 		return -1;
-	} else {
-		const n = Number(arr[0]);
-		if (n !== null) {
-			return n;
-		} else {
-			return -1;
-		}
 	}
+	const n = Number(match[0]);
+	return isNaN(n) ? -1 : n;
 }
 
 export function formatHistory(
@@ -56,15 +50,23 @@ ${modelResponses[idx]}
 	return outputStrings.join('\n\n');
 }
 
-export function parseURLParamsToFilters(url: URL): Map<string, string> {
+export interface FilterItem {
+	key: string;
+	match: { value: string };
+}
+
+export interface ParsedFilters {
+	must: FilterItem[];
+}
+
+export function parseURLParamsToFilters(url: URL): ParsedFilters {
 	const searchParams = url.searchParams;
-	let params = new Map();
-	params['must'] = [];
+	const must: FilterItem[] = [];
 	const targetKeys = ['collection_id', 'volume_id'];
 	for (const [key, value] of searchParams) {
 		if (targetKeys.includes(key)) {
-			params.must.push({ key, match: { value } });
+			must.push({ key, match: { value } });
 		}
 	}
-	return params;
+	return { must };
 }
