@@ -11,9 +11,10 @@ export default {
 		join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')
 	],
 	theme: {
-		extend: {},
-		fontSize: {
-			xs: '0.75rem'
+		extend: {
+			fontSize: {
+				xs: '0.75rem'
+			}
 		}
 	},
 	plugins: [
@@ -24,6 +25,14 @@ export default {
 				preset: [
 					{
 						name: 'crimson',
+						enhancements: true
+					},
+					{
+						name: 'modern',
+						enhancements: true
+					},
+					{
+						name: 'skeleton',
 						enhancements: true
 					}
 				]
