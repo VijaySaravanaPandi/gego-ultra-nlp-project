@@ -1,20 +1,19 @@
 import { json } from '@sveltejs/kit';
-import { TOGETHERAI_API_TOKEN } from '$env/static/private';
-import Replicate from 'replicate';
+import { GROQ_API_KEY } from '$env/static/private';
+import Groq from 'groq-sdk';
 
-import Together from 'together-ai';
-const together = new Together({ apiKey: TOGETHERAI_API_TOKEN });
+const groq = new Groq({ apiKey: GROQ_API_KEY });
 
 export async function POST({ request }) {
 	const j = await request.json();
 	const message: string = j['message'];
 
-	const response = await together.chat.completions.create({
-		model: 'google/gemma-4-31B-it',
+	const response = await groq.chat.completions.create({
+		model: 'openai/gpt-oss-120b',
 		messages: [{ role: 'user', content: message }]
 	});
 
-	const output: string = response.choices[0].message.content;
+	const output: string = response.choices[0]?.message?.content ?? '';
 
 	return json({ content: output }, { status: 201 });
 }
