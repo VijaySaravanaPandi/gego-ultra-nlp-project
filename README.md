@@ -4,7 +4,8 @@
 **Subject:** NLP - Natural Language Processing  
 **Project:** Final Year Capstone NLP Project  
 **Author / Developer:** Vijay Saravana Pandi ([vijaysaravanapandit@gmail.com](mailto:vijaysaravanapandit@gmail.com))  
-**Repository:** [https://github.com/VijaySaravanaPandi/gego-ultra-nlp-project](https://github.com/VijaySaravanaPandi/gego-ultra-nlp-project)
+**Repository:** [https://github.com/VijaySaravanaPandi/gego-ultra-nlp-project](https://github.com/VijaySaravanaPandi/gego-ultra-nlp-project)  
+**Live Deployment:** [https://gego-ultra-nlp-project-001-dun.vercel.app/](https://gego-ultra-nlp-project-001-dun.vercel.app/)
 
 ---
 
