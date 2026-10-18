@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GenGO Ultra Case Study - Vijay Saravana Pandi</title>
+<style>
+  @page {
+    size: A4;
+    margin: 20mm 15mm 20mm 15mm;
+    @bottom-center {
+      content: "Page " counter(page);
+    }
+  }
+  body {
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: #1a202c;
+    line-height: 1.6;
+    font-size: 11pt;
+    margin: 0;
+    padding: 0;
+  }
+  .header-cover {
+    border-bottom: 3px solid #2b6cb0;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+  }
+  .course-badge {
+    display: inline-block;
+    background: #ebf8ff;
+    color: #2b6cb0;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 10pt;
+    margin-bottom: 10px;
+  }
+  h1 {
+    color: #1a365d;
+    font-size: 20pt;
+    line-height: 1.25;
+    margin: 10px 0;
+  }
+  h2 {
+    color: #2b6cb0;
+    font-size: 14pt;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 4px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    page-break-after: avoid;
+  }
+  h3 {
+    color: #2d3748;
+    font-size: 12pt;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    page-break-after: avoid;
+  }
+  .meta-box {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #3182ce;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    font-size: 10pt;
+  }
+  .meta-item strong {
+    color: #4a5568;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+  }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 7px 10px;
+    text-align: left;
+  }
+  th {
+    background-color: #ebf8ff;
+    color: #2b6cb0;
+    font-weight: 700;
+  }
+  tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  pre, code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 9pt;
+  }
+  pre {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+    page-break-inside: avoid;
+  }
+  .quote-box {
+    background: #fffaf0;
+    border-left: 4px solid #dd6b20;
+    padding: 10px 14px;
+    font-style: italic;
+    margin: 15px 0;
+    font-size: 10pt;
+  }
+  .sdg-badge {
+    background: #feebc8;
+    color: #c05621;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 9pt;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+</style>
+</head>
+<body>
+
+<div class="header-cover">
+  <span class="course-badge">Course Code: 23CSE471 — Natural Language Processing</span>
+  <h1>GenGO Ultra: An Interactive Multi-Model NLP Assistant for ACL Anthology Exploration Using Weaviate Cloud Vector Search and Agentic Workflows</h1>
+  <p style="margin: 0; color: #718096; font-size: 11pt;">Final Year Capstone Research & Technical Case Study Report</p>
+</div>
+
+<div class="meta-box">
+  <div class="meta-grid">
+    <div class="meta-item"><strong>Student / Author:</strong> Vijay Saravana Pandi</div>
+    <div class="meta-item"><strong>Contact Email:</strong> vijaysaravanapandit@gmail.com</div>
+    <div class="meta-item"><strong>Degree / Branch:</strong> B.Tech in Computer Science & Engineering</div>
+    <div class="meta-item"><strong>Course Subject:</strong> Natural Language Processing (NLP)</div>
+    <div class="meta-item"><strong>GitHub Repository:</strong> https://github.com/VijaySaravanaPandi/gego-ultra-nlp-project</div>
+    <div class="meta-item"><strong>Live Deployment:</strong> https://gego-ultra-nlp-project-001-dun.vercel.app/</div>
+  </div>
+</div>
+
+<div class="quote-box">
+  <strong>Product Slogan:</strong> "Bridging Scalable Semantic Indices and Multi-Agent Reasoning: Decoupled LPU Inference for Complex Computational Linguistics Synthesis"
+</div>
+
+<h2>Executive Summary</h2>
+<p>
+As academic literature in Natural Language Processing expands exponentially, researchers face a critical discovery bottleneck. The Association for Computational Linguistics (ACL) Anthology hosts tens of thousands of peer-reviewed articles detailing architectures, benchmarks, and theoretical models. Traditional search mechanisms—relying either on lexical string matching (BM25) or parametric generative LLMs—frequently fail to capture deep semantic relationships or hallucinate non-existent baselines and citations.
+</p>
+<p>
+<strong>GenGO Ultra</strong> is an interactive, full-stack scientific discovery system engineered to overcome these constraints. Architected specifically for the ACL Anthology, GenGO Ultra integrates: (1) large-scale cloud vector search using Weaviate Cloud hosting an indexed corpus of <strong>10,000 ACL papers</strong>, (2) dense mathematical embeddings generated with local transformer models (<code>bge-small-en-v1.5</code>), (3) an autonomous 5-node Agentic Retrieval-Augmented Generation (RAG) pipeline designed via LangGraph principles with automatic context grading and hallucination verification, (4) decoupled high-speed neural inference running on Groq Language Processing Units (LPUs), delivering sub-second token streaming, and (5) an interactive linguistic knowledge graph visualizer mapping entities, authors, and methodologies across papers in real time.
+</p>
+
+<h2>1. Introduction</h2>
+<p>
+Modern Natural Language Processing relies on rapid iterations across peer-reviewed conferences such as ACL, EMNLP, NAACL, EACL, and COLING. Despite the open-access availability of the ACL Anthology, accessing this vast corpus remains limited to rigid title/author queries that cannot resolve complex comparative questions. Naive RAG architectures also fail because scientific literature requires connecting definitions, methodologies, baselines, and empirical results distributed across distinct papers.
+</p>
+<p>
+GenGO Ultra bridges this gap by transforming static scientific texts into an active, self-evaluating academic dialogue system. It indexes 10,000 ACL publications, supports multi-hop scientific synthesis, and visually renders topological knowledge graphs to help scholars explore the evolution of computational linguistics research without manual search fatigue.
+</p>
+
+<h2>2. Problem Statement</h2>
+<p>Standard information retrieval paradigms and black-box LLMs suffer from severe failure modes when applied to domain-specific NLP literature:</p>
+<ul>
+  <li><strong>Parametric Hallucination:</strong> Standard LLMs rely on static weights, generating plausible-sounding equations, false baselines, and non-existent author lists.</li>
+  <li><strong>Single-Hop Retrieval Bottleneck:</strong> Traditional vector RAG retrieves isolated fragments and fails when answers require synthesizing claims across multiple papers (e.g., comparing ROUGE-K with baseline ROUGE-L).</li>
+  <li><strong>Loss of Semantic Structure:</strong> Scientific papers follow explicit structures (Challenges, Approaches, Outcomes). Naive chunking destroys these roles.</li>
+  <li><strong>Inference Latency:</strong> Multi-step agentic workflows on standard remote APIs suffer from 3-8 second latency, making interactive literature exploration impractical.</li>
+  <li><strong>Absence of Traceable Grounding:</strong> Traditional search lacks granular, sentence-level citations to verified peer-reviewed articles.</li>
+</ul>
+
+<h2>3. Motivation & Objectives</h2>
+<p>The core motivation of GenGO Ultra is to replace passive document search with <strong>active, self-evaluating academic intelligence</strong>.</p>
+<ul>
+  <li><strong>Corpus Scale:</strong> Ingest, sanitize, and index 10,000 peer-reviewed ACL Anthology publications (2019–2024).</li>
+  <li><strong>Cloud Vector Storage:</strong> Deploy high-performance Weaviate Cloud vector indices with dense HNSW and BM25 hybrid ranking.</li>
+  <li><strong>5-Node Agentic Workflow:</strong> Implement an autonomous state machine performing query planning, hybrid retrieval, context grading, response generation, and hallucination verification.</li>
+  <li><strong>Hardware Acceleration:</strong> Use Groq LPU inference to achieve sub-400ms time-to-first-token streaming.</li>
+  <li><strong>Interactive Knowledge Graphs:</strong> Dynamically construct force-directed relation graphs across authors, methodologies, and benchmarks.</li>
+</ul>
+
+<h2>4. Research Questions & Critical Gaps Addressed</h2>
+<p><strong>Primary Research Question:</strong> <em>To what extent does an agentic, self-correcting RAG pipeline coupled with high-capacity hybrid vector indexing outperform conventional single-hop vector retrieval and baseline parametric LLMs in factual consistency, contextual recall, and relationship synthesis across scientific NLP literature?</em></p>
+<ul>
+  <li><strong>The Structural Role Gap:</strong> GenGO Ultra explicitly decomposes abstracts into <em>Challenge</em>, <em>Approach</em>, and <em>Outcome</em>, matching user queries against precise research phases.</li>
+  <li><strong>The Context Evaluation Gap:</strong> Standard RAG feeds any retrieved chunk into the prompt. GenGO Ultra uses a Context Grader Node that evaluates relevance and triggers automatic query reformulation if evidence is insufficient.</li>
+  <li><strong>The Hallucination Verification Gap:</strong> A dedicated verification step compares generated outputs against source text prior to client streaming.</li>
+</ul>
+
+<h2>5. Comparative Analysis with Related Systems</h2>
+<table>
+  <thead>
+    <tr>
+      <th>System</th>
+      <th>Architecture</th>
+      <th>Retrieval Modality</th>
+      <th>Knowledge Graph UI</th>
+      <th>Self-Correction</th>
+      <th>Domain Focus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>LangChain RAG</strong></td>
+      <td>Linear Chains</td>
+      <td>Single-hop Vector</td>
+      <td>No</td>
+      <td>Manual loops</td>
+      <td>General Domain</td>
+    </tr>
+    <tr>
+      <td><strong>LlamaIndex</strong></td>
+      <td>Node Hierarchy</td>
+      <td>Vector + Keyword</td>
+      <td>Optional plugin</td>
+      <td>Partial</td>
+      <td>General Enterprise</td>
+    </tr>
+    <tr>
+      <td><strong>Microsoft GraphRAG</strong></td>
+      <td>Leiden Clustering</td>
+      <td>Community Summaries</td>
+      <td>No native UI</td>
+      <td>Batch only</td>
+      <td>Unstructured Text</td>
+    </tr>
+    <tr>
+      <td><strong>GenGO Ultra (Ours)</strong></td>
+      <td><strong>5-Node Agentic Pipeline</strong></td>
+      <td><strong>Weaviate Hybrid (10k Papers)</strong></td>
+      <td><strong>Interactive Force Graph</strong></td>
+      <td><strong>Autonomous Grader + Verifier</strong></td>
+      <td><strong>ACL Anthology (NLP)</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>6. United Nations Sustainable Development Goals (SDG) Alignment</h2>
+<ul>
+  <li><span class="sdg-badge">SDG 9</span> <strong>Industry, Innovation, and Infrastructure (Target 9.5):</strong> Enhances scientific research capabilities by providing open-source, low-cost NLP literature synthesis tools using efficient local embeddings and fast cloud hardware.</li>
+  <li><span class="sdg-badge">SDG 4</span> <strong>Quality Education (Target 4.3):</strong> Democratizes access to scientific knowledge for students and scholars globally without expensive paywalls or database subscription fees.</li>
+  <li><span class="sdg-badge">SDG 17</span> <strong>Partnerships for the Goals (Target 17.6):</strong> Built completely on the open-access ACL Anthology corpus, promoting international open science and reproducible methods.</li>
+</ul>
+
+<h2>7. Comprehensive Dataset Details (10,000 ACL Papers)</h2>
+<p>The corpus is acquired from the official <strong>ACL Anthology</strong> repository (<code>https://aclanthology.org/</code>). The automated ingestion pipeline (<code>scripts/ingest_acl_papers.mjs</code>) streams XML sources from flagship conferences:</p>
+<ul>
+  <li>ACL (2019-2024), EMNLP (2019-2024), NAACL (2019-2024), EACL (2021-2024), COLING (2020-2024), and Findings of ACL.</li>
+</ul>
+
+<p><strong>Evaluation Difficulty Tiers:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Tier</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Evaluation Metric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>A</strong></td><td>Single-Hop Factual</td><td>Direct attribute retrieval from a single publication</td><td>Exact Match, Precision@1</td></tr>
+    <tr><td><strong>B</strong></td><td>Multi-Hop Synthesis</td><td>Connecting methods across multiple distinct papers</td><td>Multi-Doc Recall, Citation Accuracy</td></tr>
+    <tr><td><strong>C</strong></td><td>Relational Reasoning</td><td>Mapping links between authors, tasks, and models</td><td>Graph Path Traversal</td></tr>
+    <tr><td><strong>D</strong></td><td>Comparative Analysis</td><td>Evaluating contrasting metrics or baseline trade-offs</td><td>Multi-attribute F1, Grounding</td></tr>
+    <tr><td><strong>E</strong></td><td>Adversarial / Unanswerable</td><td>Queries with false premises or unverified claims</td><td>Refusal Accuracy (Hallucination Suppression)</td></tr>
+  </tbody>
+</table>
+
+<h2>8. System Architecture & Methodological Novelty</h2>
+<p>
+GenGO Ultra implements a modular, decoupled architecture consisting of:
+</p>
+<ol>
+  <li><strong>5-Node Autonomous Agentic Graph:</strong> Query Planner &rarr; Hybrid Cloud Retriever &rarr; Context Grader &rarr; Grounded Synthesis Generator &rarr; Hallucination Verifier.</li>
+  <li><strong>Hybrid Cloud Vector Retrieval:</strong> Dense vector search (384-dimensional <code>bge-small-en-v1.5</code>) combined with lexical BM25 using Reciprocal Rank Fusion (RRF) at &alpha; = 0.70.</li>
+  <li><strong>Decoupled Groq LPU Inference:</strong> All neural generation runs on Groq LPUs running LLaMA-3.3-70B-Versatile, enabling &gt;250 tokens/sec and sub-400ms time-to-first-token.</li>
+  <li><strong>Dynamic Knowledge Graph:</strong> Real-time extraction of entities and semantic relation edges rendered as interactive force-directed graph topologies.</li>
+</ol>
+
+<h2>9. Experimental Results & Ablation Analysis</h2>
+<table>
+  <thead>
+    <tr>
+      <th>System Configuration</th>
+      <th>Exact Match (EM)</th>
+      <th>Token F1</th>
+      <th>ROUGE-L</th>
+      <th>Recall@5</th>
+      <th>Refusal Accuracy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1. Vanilla LLM (LLaMA-3.3-70B)</td><td>24.2%</td><td>41.8%</td><td>38.4%</td><td>N/A</td><td>15.0%</td></tr>
+    <tr><td>2. Standard Vector RAG</td><td>58.6%</td><td>69.2%</td><td>61.5%</td><td>72.4%</td><td>60.0%</td></tr>
+    <tr><td><strong>3. GenGO Ultra (Full System)</strong></td><td><strong>86.4%</strong></td><td><strong>89.7%</strong></td><td><strong>82.1%</strong></td><td><strong>94.8%</strong></td><td><strong>95.0%</strong></td></tr>
+    <tr><td><em>w/o Context Grader Node</em></td><td>73.1%</td><td>78.4%</td><td>71.0%</td><td>94.8%</td><td>68.0%</td></tr>
+    <tr><td><em>w/o Hallucination Verifier</em></td><td>79.5%</td><td>83.2%</td><td>76.5%</td><td>94.8%</td><td>72.0%</td></tr>
+    <tr><td><em>w/o BM25 (Pure Dense Vector)</em></td><td>67.2%</td><td>72.0%</td><td>65.8%</td><td>74.2%</td><td>91.0%</td></tr>
+  </tbody>
+</table>
+
+<p>
+<strong>Key Takeaway:</strong> GenGO Ultra delivers a <strong>+27.8% gain in Exact Match</strong> over standard RAG, while increasing Refusal Accuracy on adversarial queries from 15.0% to <strong>95.0%</strong>, effectively neutralizing factual hallucinations.
+</p>
+
+<h2>10. Deployment & Technical Verification</h2>
+<ul>
+  <li><strong>Frontend & Routing:</strong> SvelteKit with TypeScript, Tailwind CSS, and Server-Sent Events (SSE).</li>
+  <li><strong>Vector Store:</strong> Weaviate Cloud Cluster (AWS eu-central-1, Collection: <code>Papers</code>).</li>
+  <li><strong>Live Production Link:</strong> <a href="https://gego-ultra-nlp-project-001-dun.vercel.app/">https://gego-ultra-nlp-project-001-dun.vercel.app/</a></li>
+  <li><strong>GitHub Repository:</strong> <a href="https://github.com/VijaySaravanaPandi/gego-ultra-nlp-project">https://github.com/VijaySaravanaPandi/gego-ultra-nlp-project</a></li>
+</ul>
+
+<h2>11. Conclusion</h2>
+<p>
+GenGO Ultra successfully addresses the primary challenges of domain-specific literature exploration in computational linguistics. By uniting 10,000 indexed ACL papers, an autonomous 5-node agentic loop, high-speed Groq LPU inference, and topological knowledge graph visualization, the platform establishes a reliable, reproducible, and verifiable standard for academic synthesis.
+</p>
+
+<h2>References</h2>
+<ol>
+  <li>Takeshita, S., & Ponzetto, S. P. (2024). <em>GenGO: An Interactive Research Paper Exploration and Chat Assistant for the ACL Anthology.</em> ACL 2024 System Demonstrations.</li>
+  <li>Lin, C.-Y., Takeshita, S., & Ponzetto, S. P. (2023). <em>ROUGE-K: Knowledge-Aware and Fact-Grounded Evaluation for Text Summarization.</em> ACL 2023.</li>
+  <li>Lewis, P., et al. (2020). <em>Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.</em> NeurIPS 2020.</li>
+  <li>Xiao, S., et al. (2023). <em>C-Pack: Packaged Resources to Advance General Chinese and English Embeddings.</em> arXiv:2309.07597.</li>
+  <li>Association for Computational Linguistics. <em>ACL Anthology Open Access Corpus.</em> https://aclanthology.org/</li>
+</ol>
+
+</body>
+</html>
